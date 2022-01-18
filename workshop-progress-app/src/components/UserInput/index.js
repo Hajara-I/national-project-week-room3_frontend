@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function UserInput({ handleClick }) {
+function UserInput(props) {
 
    const [text, setText] = useState("");
 
@@ -14,7 +14,7 @@ function UserInput({ handleClick }) {
       <div className="App">
          <form className="user-form">
             <p>Workshop Name</p>
-            <input type="text" name="Workshop-name" placeholder="Enter a workshop name" onChange={(e)=>{handleChange(e)}} />
+            <input type="text" className="berries" name="workshop" placeholder="Enter a workshop name" onChange={(e)=>{handleChange(e)}} />
             <input type="date" name="Date" />
             <input name="Progress" placeholder="How far did you get?" />
             <br />
@@ -31,7 +31,7 @@ function UserInput({ handleClick }) {
 
             <br />
             <br />
-            <button onClick={(e)=>{handleChange(e)}}>Add Task</button>
+            <button onClick={props.onClick}>Add Task</button>
          </form>
       </div>
    );

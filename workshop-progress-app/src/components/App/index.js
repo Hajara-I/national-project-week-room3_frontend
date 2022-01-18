@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import UserInput from "../UserInput";
 import { WorkshopList } from "../WorkshopList";
+import { workshopData } from "./workshop-data";
 
 function App() {
    const [data, setData] = useState([
@@ -14,15 +15,29 @@ function App() {
       },
    ]);
 
-   function handleClick(e) {
-      const value = e.target.value;
-      setData(value);
-      console.log("handleClick has been called",value);
-   }
+   // function handleClick(e) {
+   //    const value = e.target.progress.value;
+   //    setData(value);
+   //    console.log("handleClick has been called",value);
+   // }
 
+   function addNewWorkshop () {
+      const newData = {name: document.querySelector(".berries").value};
+      setData({...data, newData})
+      
+   }
+   console.log("handleClick has been called",data);
    return (
       <section>
-         <UserInput handleClick={handleClick} />
+         <UserInput onClick={addNewWorkshop} />
+         <div>
+            {data.map(function (item) {
+               return <div>
+                     <p handleChange={addNewWorkshop}>{item.name}</p>
+                     <p handleChange={addNewWorkshop}>{item.date}</p>
+                  </div>
+            })}
+         </div>
          {/* <WorkshopList /> */}
       </section>
    );
