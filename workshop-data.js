@@ -1,44 +1,39 @@
-const workshopData = [
+const sampleData = [
   {
-    id: 1,
     name: "Koala",
-    date: "17/01/2022",
-    progress: "I hate CSS",
+    date: "2022-01-17",
+    progress: 0,
     mood: "poor",
   },
   {
-    id: 2,
     name: "To-do list",
-    date: "16/01/2022",
-    progress: "Dynamic rendering was fun!",
+    date: "2022-01-16",
+    progress: 50,
     mood: "good",
   },
   {
-    id: 3,
     name: "React router",
-    date: "15/01/2022",
-    progress: "Struggled to create routes",
+    date: "2022-01-15",
+    progress: 25,
     mood: "fair",
   },
   {
-    id: 4,
     name: "Rock, paper, scissors",
-    date: "14/01/2022",
-    progress: "JS was a challenge!",
+    date: "2022-01-14",
+    progress: 100,
     mood: "fair",
   },
   {
-    id: 5,
     name: "Express",
-    date: "13/01/2022",
-    progress: "Express was great",
+    date: "2022-01-13",
+    progress: 50,
     mood: "good",
   },
   {
-    id: 6,
     name: "Node PG",
-    date: "12/01/2022",
-    progress: "Node was tough",
+    date: "2022-01-12",
+    progress: 25,
     mood: "poor",
   },
 ];
+export default sampleData;

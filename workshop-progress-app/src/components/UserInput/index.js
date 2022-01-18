@@ -1,40 +1,37 @@
-import React, {useState} from "react";
+import React from "react";
 
-function UserInput(props) {
+function UserInput({ handleChange, handleClick }) {
+  return (
+    <div className="App">
+      <form className="user-form">
+        <p>Workshop Name</p>
+        <input
+          type="text"
+          className="berries"
+          name="workshop"
+          placeholder="Enter a workshop name"
+          onChange={handleChange}
+        />
+        <input type="date" name="Date" />
+        <input name="Progress" placeholder="How far did you get?" />
+        <br />
+        <br />
+        <hr />
+        <input type="radio" className="emoji" name="mood" value="poor" />
+        <label>:(</label>
 
-   const [text, setText] = useState("");
+        <input type="radio" className="emoji" name="mood" value="fair" />
+        <label>:|</label>
 
-   function handleChange (e) {
-      const value = e.target.value;
-      setText(value);
-      console.log("handleChange function has been called", value);
-   }
+        <input type="radio" className="emoji" name="mood" value="good" />
+        <label>:)</label>
 
-   return (
-      <div className="App">
-         <form className="user-form">
-            <p>Workshop Name</p>
-            <input type="text" className="berries" name="workshop" placeholder="Enter a workshop name" onChange={(e)=>{handleChange(e)}} />
-            <input type="date" name="Date" />
-            <input name="Progress" placeholder="How far did you get?" />
-            <br />
-            <br />
-            <hr />
-            <input type="radio" className="emoji" name="mood" value="poor" />
-            <label>:(</label>
-
-            <input type="radio" className="emoji" name="mood" value="fair" />
-            <label>:|</label>
-
-            <input type="radio" className="emoji" name="mood" value="good" />
-            <label>:)</label>
-
-            <br />
-            <br />
-            <button onClick={props.onClick}>Add Task</button>
-         </form>
-      </div>
-   );
+        <br />
+        <br />
+        <button onClick={handleClick}>Add Task</button>
+      </form>
+    </div>
+  );
 }
 
 export default UserInput;
