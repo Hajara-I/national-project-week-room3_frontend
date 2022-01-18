@@ -8,15 +8,17 @@ function UserInput() {
             <input type="text" name="Workshop-name" placeholder="Enter a workshop name"/>
             <input type="date" name="Date" />
             <input name="Progress" placeholder="How far did you get?"/>
+            <br/>
+            <br/>
             <hr/>
-            <input type="radio" id="poor" name="mood" value="poor" />
-            <label for="poor">poor</label>
-            <br />
-            <input type="radio" id="fair" name="mood" value="fair" />
-            <label for="fair">fair</label>
-            <br />
-            <input type="radio" id="good" name="mood" value="good" />
-            <label for="good">good</label>
+            <input type="radio" className="emoji" name="mood" value="poor" />
+            <label for="poor">:(</label>
+   
+            <input type="radio" className="emoji" name="mood" value="fair" />
+            <label for="fair">:|</label>
+
+            <input type="radio" className="emoji" name="mood" value="good" />
+            <label for="good">:)</label>
             <br />
             <br />
             <button type="submit">Add Task</button>
