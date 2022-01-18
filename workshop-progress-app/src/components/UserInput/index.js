@@ -4,10 +4,11 @@ function UserInput() {
    return (
       <div className="App">
          <form className="user-form">
-            <input type="text" name="Workshop-name" />
-            <input type="text" name="Date" />
-            <input type="text" name="Progress" />
-
+            <p>Workshop Name</p>
+            <input type="text" name="Workshop-name" placeholder="Enter a workshop name"/>
+            <input type="date" name="Date" />
+            <input name="Progress" placeholder="How far did you get?"/>
+            <hr/>
             <input type="radio" id="poor" name="mood" value="poor" />
             <label for="poor">poor</label>
             <br />
