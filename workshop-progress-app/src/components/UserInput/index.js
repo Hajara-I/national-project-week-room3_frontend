@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-function UserInput({ handleClick, data }) {
+function UserInput({ handleClick }) {
+
+   const [text, setText] = useState("");
+
+   function handleChange (e) {
+      const value = e.target.value;
+      setText(value);
+      console.log("handleChange function has been called", value);
+   }
+
    return (
       <div className="App">
          <form className="user-form">
             <p>Workshop Name</p>
-            <input
-               type="text"
-               name="Workshop-name"
-               placeholder="Enter a workshop name"
-            />
+            <input type="text" name="Workshop-name" placeholder="Enter a workshop name" onChange={(e)=>{handleChange(e)}} />
             <input type="date" name="Date" />
             <input name="Progress" placeholder="How far did you get?" />
             <br />
@@ -26,7 +31,7 @@ function UserInput({ handleClick, data }) {
 
             <br />
             <br />
-            <button onClick={handleClick}>Add Task</button>
+            <button onClick={(e)=>{handleChange(e)}}>Add Task</button>
          </form>
       </div>
    );

@@ -9,20 +9,20 @@ function App() {
          id: 1,
          name: "Koala",
          date: "17/01/2022",
-         progress: "I hate CSS",
+         progress: "I love CSS",
          mood: "poor",
       },
    ]);
 
-   function handleClick(event) {
-      const value = event.target.value;
+   function handleClick(e) {
+      const value = e.target.value;
       setData(value);
-      console.log(value);
+      console.log("handleClick has been called",value);
    }
 
    return (
       <section>
-         <UserInput handleClick={handleClick} data={data} />
+         <UserInput handleClick={handleClick} />
          {/* <WorkshopList /> */}
       </section>
    );
