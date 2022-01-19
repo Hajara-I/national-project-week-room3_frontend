@@ -19,7 +19,7 @@ function App() {
 		console.log(workshops);
 	}
 
-	//function deleteWorkshop() { }
+	//function deleteWorkshop() {}
 
 	return (
 		<div className="App">
@@ -29,9 +29,10 @@ function App() {
 			<br />
 			<br />
 			<div className="workshop-container">
-				{workshops.map(function (item) {
+				{workshops.map(function (item, index) {
 					return (
 						<Workshops
+							key={index}
 							name={item.name}
 							date={item.date}
 							progress={item.progress}

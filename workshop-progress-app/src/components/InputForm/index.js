@@ -5,7 +5,7 @@ function InputForm(props) {
 		<div>
 			<input className="workshop-name" />
 			<input className="date" type="date" />
-			<label for="progress">Choose your progress</label>
+			<label>Choose your progress</label>
 			<select className="progress" name="progress">
 				<option value="0">0%</option>
 				<option value="25">25%</option>
