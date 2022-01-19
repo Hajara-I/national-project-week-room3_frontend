@@ -55,7 +55,7 @@ function App() {
    return (
       <section>
          <UserInput handleClick={handleClick} handleChange={handleChange} data={data}/>
-         <div>
+         <div className="data">
             {data.map(function (item) {
                return (
                   <div key={item.id}>

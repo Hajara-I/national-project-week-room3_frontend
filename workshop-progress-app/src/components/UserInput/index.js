@@ -26,17 +26,17 @@ function UserInput({ handleChange, handleClick, data}) {
             <hr />
 
             <div onChange={handleChange}>
-               <input type="radio" className="emoji" name="mood" value="&#128515;" />
+               <input type="radio" className="emoji" name="mood" value="good" />
             <span aria-label=" grin smile" role="img">
                &#128515;
             </span>
 
-            <input type="radio" className="emoji" name="mood" value="&#128528;" />
+            <input type="radio" className="emoji" name="mood" value="fair" />
             <span aria-label="neutral face" role="img">
                &#128528;
             </span>
 
-            <input type="radio" className="emoji" name="mood" value="&#128553;" />
+            <input type="radio" className="emoji" name="mood" value="poor" />
             <span aria-label="weary" role="img">
                &#128553;
             </span>
