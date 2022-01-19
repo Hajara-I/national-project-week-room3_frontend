@@ -8,16 +8,16 @@ function UserInput({ handleChange, handleSubmit, data}) {
                type="text"
                name="workshop"
                placeholder="Enter a workshop name"
-               value={data.name || ""}
+               value={data.name}
                onChange={handleChange}/></label>
             <br/>
            
-            <input type="date" name="Date" value={data.date || ""}
+            <input type="date" name="Date" value={data.date}
             onChange={handleChange}/>
             <br/>
             
             <label>0%<input type="radio" 
-            value={data.progress || ""}
+            value={data.progress}
             onChange={handleChange}/></label>
             <label>25%<input type="radio" name="progress" /></label>
             <label>50%<input type="radio" name="progress"/></label>
@@ -28,19 +28,21 @@ function UserInput({ handleChange, handleSubmit, data}) {
             <br />
             <hr />
 
-            <div value={data.mood || ""}
-               onChange={handleChange}>
-               <input type="radio" className="emoji" name="mood" value="good" />
+            <div>
+               <input type="radio" className="emoji" name="mood" value="good" value={data.mood}
+               onChange={handleChange}/>
             <span aria-label=" grin smile" role="img">
                😃
             </span>
 
-            <input type="radio" className="emoji" name="mood" value="fair" />
+            <input type="radio" className="emoji" name="mood" value="fair" value={data.mood}
+               onChange={handleChange} />
             <span aria-label="neutral face" role="img">
                😐
             </span>
 
-            <input type="radio" className="emoji" name="mood" value="poor" />
+            <input type="radio" className="emoji" name="mood" value="poor" value={data.mood}
+               onChange={handleChange} />
             <span aria-label="weary" role="img">
                😩
             </span>
@@ -48,7 +50,7 @@ function UserInput({ handleChange, handleSubmit, data}) {
 
             <br />
             <br />
-            <input type="submit" value="Add Task"/>
+            <input type="submit" value="Add Task" />
          </form>
       </div>
    );

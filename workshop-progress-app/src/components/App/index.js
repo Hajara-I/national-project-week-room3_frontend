@@ -6,7 +6,7 @@ import { sampleData } from "./workshop-data";
 
 function App() {
    // const [text, setText] = useState("");
-   const [data, setData] = useState({});
+   const [data, setData] = useState([{}]);
 
    const handleChange = (e) => {
       e.preventDefault();
@@ -17,7 +17,7 @@ function App() {
          progress: e.target.progress,
          mood: e.target.mood,
       };
-      setData({...data, newObject});
+      setData([{...data, newObject}]);
    };
 
    console.log("App re-rendered. ", data);
@@ -45,7 +45,7 @@ function App() {
          <div>
             {data.map(function (item) {
                return (
-                  <div>
+                  <div key={item.id}>
                      <p key={item.id}></p>
                      <p>{item.name}</p>
                      <p>{item.date}</p>
@@ -53,7 +53,7 @@ function App() {
                      <p>{item.mood}</p>
                   </div>
                );
-            }) || ""}
+            })}
          </div>
 
          {/* <WorkshopList /> */}
