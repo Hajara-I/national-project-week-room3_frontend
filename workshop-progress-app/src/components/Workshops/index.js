@@ -13,3 +13,5 @@ function Workshops({ name, date, progress, mood }) {
 }
 
 export default Workshops;
+
+// Plan for delete button

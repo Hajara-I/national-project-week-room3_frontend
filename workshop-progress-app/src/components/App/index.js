@@ -6,6 +6,7 @@ import Workshops from "../Workshops";
 
 function App() {
 	const [workshops, setWorkshops] = useState([]);
+	const [workshopEntry, setWorkshopEntry] = useState();
 
 	function addNewWorkshop() {
 		const newWorkshop = {
@@ -17,6 +18,8 @@ function App() {
 		setWorkshops([...workshops, newWorkshop]);
 		console.log(workshops);
 	}
+
+	//function deleteWorkshop() { }
 
 	return (
 		<div className="App">
