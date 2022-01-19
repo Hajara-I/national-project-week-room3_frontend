@@ -5,48 +5,61 @@ import { WorkshopList } from "../WorkshopList";
 import { sampleData } from "./workshop-data";
 
 function App() {
-   // const [text, setText] = useState("");
-   const [data, setData] = useState([{}]);
+   const [text, setText] = useState("");
+   const [data, setData] = useState([{
+      id: 10,
+      name: "Express",
+      date: "17/01/2022",
+      progress: 50,
+      mood: "fair",
+   }]);
 
-   const handleChange = (e) => {
+   // const handleChange = (e) => {
+   //    e.preventDefault();
+   //    const newObject = {
+   //       id: data.length + 1,
+   //       name: e.target.name,
+   //       date: e.target.date,
+   //       progress: e.target.progress,
+   //       mood: e.target.mood,
+   //    };
+   //    setData([{...data, newObject}]);
+   // };
+
+   // console.log("App re-rendered. ", data);
+
+   // const handleSubmit = (e) => {
+   //    e.preventDefault();
+   // };
+   const handleChange = (event) => {
+      const input = event.target.value;
+      setText(input);
+      // console.log("handleChange function has been called", value);
+   };
+
+   const handleClick = (e) => {
+      setText("");
       e.preventDefault();
+
       const newObject = {
-         id: data.length + 1,
-         name: e.target.name,
+          id: data.length + 1,
+         name: text,
          date: e.target.date,
          progress: e.target.progress,
          mood: e.target.mood,
       };
-      setData([{...data, newObject}]);
-   };
-
-   console.log("App re-rendered. ", data);
-
-   const handleSubmit = (e) => {
-      e.preventDefault();
-
-   };
-
-   // function handleClick(e) {
-   //    const value = e.target.progress.value;
-   //    setData(value);
-   //    console.log("handleClick has been called",value);
-   // }
-
-   // function addNewWorkshop () {
-   //    const newData = {name: document.querySelector(".berries").value};
-   //    setData({...data, newData})
-
-   // }
+      console.log(e.target.date);
+      setData([...data, newObject])
+      };
 
    return (
       <section>
-         <UserInput handleSubmit={handleSubmit} handleChange={handleChange} data={data}/>
+         <UserInput handleClick={handleClick} handleChange={handleChange} data={data}/>
          <div>
             {data.map(function (item) {
                return (
                   <div key={item.id}>
-                     <p key={item.id}></p>
+                     <p>{item.id}</p>
                      <p>{item.name}</p>
                      <p>{item.date}</p>
                      <p>{item.progress}</p>
