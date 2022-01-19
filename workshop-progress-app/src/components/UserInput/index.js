@@ -1,31 +1,38 @@
 import React from "react";
 
-function UserInput({ handleChange, handleClick }) {
+function UserInput({ handleChange, handleSubmit, data}) {
    return (
       <div className="App">
-         <form className="user-form">
-            <p>Workshop Name</p>
-            <input
+         <form className="user-form" onSubmit={handleSubmit}>
+            <label>Workshop Name: <input
                type="text"
-               className="berries"
                name="workshop"
                placeholder="Enter a workshop name"
-               onChange={handleChange}
-            />
-            <input type="date" name="Date" />
-            <input name="Progress" placeholder="How far did you get?" />
+               value={data.name || ""}
+               onChange={handleChange}/></label>
+            <br/>
+           
+            <input type="date" name="Date" value={data.date || ""}
+            onChange={handleChange}/>
+            <br/>
+            
+            <label>0%<input type="radio" 
+            value={data.progress || ""}
+            onChange={handleChange}/></label>
+            <label>25%<input type="radio" name="progress" /></label>
+            <label>50%<input type="radio" name="progress"/></label>
+            <label>75%<input type="radio" name="progress"/></label>
+            <label>100%<input type="radio" name="progress"/></label>
+
             <br />
             <br />
             <hr />
 
-            <input type="radio" className="emoji" name="mood" value="good" />
+            <div value={data.mood || ""}
+               onChange={handleChange}>
+               <input type="radio" className="emoji" name="mood" value="good" />
             <span aria-label=" grin smile" role="img">
                😃
-            </span>
-
-            <input type="radio" className="emoji" name="mood" value="good" />
-            <span aria-label="simple smile" role="img">
-               🙂
             </span>
 
             <input type="radio" className="emoji" name="mood" value="fair" />
@@ -34,18 +41,14 @@ function UserInput({ handleChange, handleClick }) {
             </span>
 
             <input type="radio" className="emoji" name="mood" value="poor" />
-            <span aria-label="disappointed face" role="img">
-               😞
-            </span>
-
-            <input type="radio" className="emoji" name="mood" value="poor" />
             <span aria-label="weary" role="img">
                😩
             </span>
+            </div>
 
             <br />
             <br />
-            <button onClick={handleClick}>Add Task</button>
+            <input type="submit" value="Add Task"/>
          </form>
       </div>
    );

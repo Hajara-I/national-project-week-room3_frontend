@@ -5,35 +5,26 @@ import { WorkshopList } from "../WorkshopList";
 import { sampleData } from "./workshop-data";
 
 function App() {
-   const [text, setText] = useState("");
-   const [data, setData] = useState([
-      {
-         id: 1,
-         name: "Koala",
-         date: "17/01/2022",
-         progress: 50,
-         mood: "poor",
-      },
-   ]);
+   // const [text, setText] = useState("");
+   const [data, setData] = useState({});
 
-   const handleChange = (event) => {
-      const input = event.target.value;
-      setText(input);
-      // console.log("handleChange function has been called", value);
-   };
-
-   const handleClick = (e) => {
-      setText("");
+   const handleChange = (e) => {
       e.preventDefault();
       const newObject = {
-         id: 2,
-         name: text,
-         date: "18/01/2022",
-         progress: 100,
-         mood: "good",
+         id: data.length + 1,
+         name: e.target.name,
+         date: e.target.date,
+         progress: e.target.progress,
+         mood: e.target.mood,
       };
-      setData([...data, newObject]);
-      console.log(data);
+      setData({...data, newObject});
+   };
+
+   console.log("App re-rendered. ", data);
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+
    };
 
    // function handleClick(e) {
@@ -50,7 +41,7 @@ function App() {
 
    return (
       <section>
-         <UserInput handleClick={handleClick} handleChange={handleChange} />
+         <UserInput handleSubmit={handleSubmit} handleChange={handleChange} data={data}/>
          <div>
             {data.map(function (item) {
                return (
@@ -62,7 +53,7 @@ function App() {
                      <p>{item.mood}</p>
                   </div>
                );
-            })}
+            }) || ""}
          </div>
 
          {/* <WorkshopList /> */}
