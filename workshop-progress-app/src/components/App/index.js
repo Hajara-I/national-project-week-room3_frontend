@@ -6,7 +6,7 @@ import Workshops from "../Workshops";
 
 function App() {
 	const [workshops, setWorkshops] = useState([]);
-	const [workshopEntry, setWorkshopEntry] = useState();
+	//const [workshopEntry, setWorkshopEntry] = useState();
 
 	function addNewWorkshop() {
 		const newWorkshop = {
