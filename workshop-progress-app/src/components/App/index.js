@@ -6,13 +6,15 @@ import { sampleData } from "./workshop-data";
 
 function App() {
    const [text, setText] = useState("");
-   const [data, setData] = useState([{
-      id: 10,
-      name: "Express",
-      date: "17/01/2022",
-      progress: 50,
-      mood: "fair",
-   }]);
+   const [data, setData] = useState([
+      {
+         id: 10,
+         name: "Express",
+         date: "17/01/2022",
+         progress: 50,
+         mood: "fair",
+      },
+   ]);
 
    // const handleChange = (e) => {
    //    e.preventDefault();
@@ -34,7 +36,7 @@ function App() {
    const handleChange = (event) => {
       const input = event.target.value;
       setText(input);
-      // console.log("handleChange function has been called", value);
+      console.log(input, text);
    };
 
    const handleClick = (e) => {
@@ -42,19 +44,23 @@ function App() {
       e.preventDefault();
 
       const newObject = {
-          id: data.length + 1,
+         id: data.length + 1,
          name: text,
-         date: e.target.date,
-         progress: e.target.progress,
-         mood: e.target.mood,
+         date: text.date,
+         progress: text.progress,
+         mood: text.mood,
       };
       console.log(e.target.date);
-      setData([...data, newObject])
-      };
+      setData([...data, newObject]);
+   };
 
    return (
       <section>
-         <UserInput handleClick={handleClick} handleChange={handleChange} data={data}/>
+         <UserInput
+            handleClick={handleClick}
+            handleChange={handleChange}
+            data={data}
+         />
          <div className="data">
             {data.map(function (item) {
                return (
