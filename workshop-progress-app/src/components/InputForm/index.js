@@ -6,7 +6,6 @@ function InputForm(props) {
 	const [date, setDate] = useState("");
 	const [progress, setProgress] = useState("0");
 	const [mood, setMood] = useState("good");
-	const [isloading, setIsLoading] = useState(false);
 
 	//   useNavigate is helpful for redirecting the user
 	const navigate = useNavigate();
