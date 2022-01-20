@@ -101,7 +101,9 @@ function InputForm(props) {
 							</option>
 						</select>
 					</div>
+					<div className="button-div">
 					<button className="submit-btn">SUBMIT</button>
+					</div>
 				</form>
 			</div>
 		</div>
