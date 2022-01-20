@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap");
 
 * {
-	padding: 0px;
-	margin: 0px;
-	box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 .App {
-	/* display: flex; */
-	text-align: center;
-	/* align-items: center;
+  /* display: flex; */
+  text-align: center;
+  /* align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 20%;
@@ -17,81 +17,98 @@
 }
 
 .navbar {
-	padding: 20px;
-	display: flex;
-	align-items: center;
-	max-width: 600px;
-	margin: 0 auto;
-	border-bottom: 1px solid #f2f2f2;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-	color: #f1356d;
+  color: #f1356d;
 }
 .navbar .links {
-	margin-left: auto;
+  margin-left: auto;
 }
 .navbar a {
-	margin-left: 16px;
-	text-decoration: none;
-	padding: 6px;
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
 }
 .navbar a:hover {
-	color: #f1356d;
+  color: #f1356d;
 }
 
 .header {
-	font-family: "Archivo", sans-serif;
-	margin: 0;
-	padding: 10px;
-	background-color: #fb6360;
-	color: white;
+  font-family: "Archivo", sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-color: #fb6360;
+  color: white;
 }
 .form-container-outer {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	border-width: 1px;
-	border-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-width: 1px;
+  border-color: black;
 }
 .form-container {
-	background-color: rgba(251, 98, 96, 0.198);
-	position: relative;
-	padding: 30px;
-	margin: auto;
-	width: 400px;
-	height: 350px;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
+  background-color: rgba(251, 98, 96, 0.198);
+  position: relative;
+  padding: 30px;
+  margin: auto;
+  width: 400px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 input.date,
 input.workshop-name,
 select.progress,
 select.mood-btns {
-	margin: 10px;
-	padding: 5px;
+  margin: 10px;
+  padding: 5px;
 }
 
 input.workshop-name {
-	width: 80%;
+  width: 80%;
 }
 
 input.date {
-	width: 40%;
+  width: 40%;
 }
 
 .submit-btn {
-	padding: 10px;
-	border: none;
-	border-radius: 10px;
-	background-color: #fb6360;
-	color: white;
-	letter-spacing: 1px;
-	cursor: pointer;
-	width: 30%;
-	margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fb6360;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 30%;
+  margin-top: 20px;
+}
+
+/* Below has been added by Asma to style the all workshops page */
+/* Please do edit away! */
+.workshop-preview {
+  max-width: 50%;
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.workshop-preview {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.workshop-preview h3 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
 }
