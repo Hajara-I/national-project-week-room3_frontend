@@ -28,7 +28,7 @@ function Workshops({ name, date, progress, mood }) {
 			{workshops && (
 				<WorkshopList
 					workshops={workshops}
-					title={"All Workshops"}
+					title={"View All Workshops"}
 					handleDelete={handleDelete}
 				/>
 			)}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const WorkshopList = ({ workshops }) => {
+const WorkshopList = ({ workshops, title }) => {
 	return (
 		<div className="workshop-list">
 			<h3>{title}</h3>
