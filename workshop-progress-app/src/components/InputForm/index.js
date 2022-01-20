@@ -15,16 +15,12 @@ function InputForm(props) {
 		e.preventDefault();
 		const workshop = { name, date, progress, mood };
 
-		//setting state to inform user that post is pending
-		setIsLoading(true);
-
 		fetch("https://workshop-tracker.herokuapp.com/workshops", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(workshop),
 		}).then(() => {
 			console.log("New workshop added!");
-			setIsLoading(false);
 			// redirecting the user to the home path after they've added a workshop
 			navigate("/all-workshops");
 		});
