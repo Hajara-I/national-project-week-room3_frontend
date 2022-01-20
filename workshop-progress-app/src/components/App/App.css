@@ -1,114 +1,147 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap");
 
 * {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Archivo", sans-serif;
+	color: #333;
 }
-
-.App {
-  /* display: flex; */
-  text-align: center;
-  /* align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 20%;
-	margin-top: 50%; */
-}
-
 .navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	max-width: 600px;
+	margin: 0 auto;
+	border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+	color: #fb6360;
 }
 .navbar .links {
-  margin-left: auto;
+	margin-left: auto;
 }
 .navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
+	margin-left: 16px;
+	text-decoration: none;
+	padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+	color: #fb6360;
+}
+.content {
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 20px;
 }
 
-.header {
-  font-family: "Archivo", sans-serif;
-  margin: 0;
-  padding: 10px;
-  background-color: #fb6360;
-  color: white;
-}
-.form-container-outer {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border-width: 1px;
-  border-color: black;
-}
-.form-container {
-  background-color: rgba(251, 98, 96, 0.198);
-  position: relative;
-  padding: 30px;
-  margin: auto;
-  width: 400px;
-  height: 350px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+.input-form-container-outer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	border-color: black;
+	/* background-color: red; */
 }
 
-input.date,
-input.workshop-name,
-select.progress,
-select.mood-btns {
-  margin: 10px;
-  padding: 5px;
+.input-form-container-inner {
+	background-color: rgba(255, 175, 174, 0.475);
+	position: relative;
+	padding: 25px 10px;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-input.workshop-name {
-  width: 80%;
+.input-form-header {
+	color: rgb(0, 0, 0);
+	padding: 7px;
+	font-size: 20px;
+	margin: 0;
+	justify-content: center;
 }
 
-input.date {
-  width: 40%;
+.input-form-container-inner .workshop-name,
+.date,
+.progress-label,
+.mood-label {
+	padding: 5px;
+	/* border: 2px solid red; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px 0;
+	width: 100%;
+}
+
+.progress-label,
+.mood-label {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 .submit-btn {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #fb6360;
-  color: white;
-  letter-spacing: 1px;
-  cursor: pointer;
-  width: 30%;
-  margin-top: 20px;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	background-color: #fb6360;
+	color: white;
+	letter-spacing: 1px;
+	cursor: pointer;
+	width: 50%;
+	margin-top: 20px;
 }
 
-/* Below has been added by Asma to style the all workshops page */
-/* Please do edit away! */
 .workshop-preview {
-  max-width: 50%;
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+	padding: 10px 16px;
+	margin: 20px 0;
+	border-bottom: 1px solid #fafafa;
 }
 .workshop-preview {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .workshop-preview h3 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
+	font-size: 20px;
+	color: #f1356d;
+	margin-bottom: 8px;
+}
+
+.add-workshop {
+	max-width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.add-workshop label {
+	text-align: left;
+	display: block;
+}
+.add-workshop h2 {
+	font-size: 20px;
+	color: #f1356d;
+	margin-bottom: 30px;
+}
+
+.add-workshop input,
+.add-workshop select {
+	width: 100%;
+	padding: 6px 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	display: block;
+}
+.add-workshop button {
+	background: #f1356d;
+	color: #fff;
+	border: 0;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
 }
