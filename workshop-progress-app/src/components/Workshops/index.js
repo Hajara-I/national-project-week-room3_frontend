@@ -1,13 +1,45 @@
+import { useEffect, useState } from "react";
+import WorkshopList from "../WorkshopList/index";
+
 function Workshops({ name, date, progress, mood }) {
+	const [workshops, setWorkshops] = useState(null);
+	const [isLoading, setIsLoading] = useState(true);
+	const handleDelete = () => {};
+	useEffect(() => {
+		fetch("https://workshop-tracker.herokuapp.com/workshops")
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setWorkshops(data);
+				setIsLoading(false);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
+	}, []);
 	return (
-		<div className="workshops">
-			<article>
-				<h4>{name}</h4>
-				<h5>{date}</h5>
-				<h5>{progress}</h5>
-				<h5>{mood}</h5>
-				<button>Delete entry</button>
-			</article>
+		//two examples of conditional rendering below
+		//logical && and ternary
+		<div className="home">
+			<h2>Your workshops at a glance</h2>
+			{isLoading && <div>Loading...</div>}
+			{workshops && (
+				<WorkshopList
+					workshops={workshops}
+					title={"All Workshops"}
+					handleDelete={handleDelete}
+				/>
+			)}
+			{/* {workshops ? (
+				<WorkshopList
+					workshops={workshops.filter((workshop) => workshop.mood === "good")}
+					title={"Workshops you felt went well"}
+				/>
+			) : (
+				<div>Loading...</div>
+			)} */}
 		</div>
 	);
 }
