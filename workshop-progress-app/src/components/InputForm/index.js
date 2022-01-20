@@ -3,16 +3,25 @@ import React from "react";
 function InputForm(props) {
 	return (
 		<div>
-			<input className="workshop-name" />
-			<input className="date" type="date" />
-			<label>Choose your progress</label>
+			<div>
+				<input className="workshop-name" />
+			</div>
+			<div>
+				<input className="date" type="date" />
+			</div>
+			<div>
+				<label>Select your progress </label>
+			
 			<select className="progress" name="progress">
 				<option value="0">0%</option>
 				<option value="25">25%</option>
 				<option value="50">50%</option>
 				<option value="100">100%</option>
 			</select>
+			</div>
 
+			<div>
+			<label>Select your mood </label>
 			<select className="mood-btns" name="mood">
 				<option
 					aria-label="weary"
@@ -42,9 +51,10 @@ function InputForm(props) {
 					😀{" "}
 				</option>
 			</select>
+			</div>
 
 			<button className="submit-btn" onClick={props.onClick}>
-				Submit
+				SUBMIT
 			</button>
 		</div>
 	);

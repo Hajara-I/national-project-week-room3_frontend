@@ -36,8 +36,12 @@ function App() {
 
   return (
     <div className="App">
+        <div><h1 className="header">Workshop Tracker</h1>
+     </div>
+      <div className="form-container-outer">
       <div className="form-container">
         <InputForm onClick={addNewWorkshop} />
+      </div>
       </div>
       <br />
       <br />
