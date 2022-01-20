@@ -23,12 +23,14 @@ function Workshops({ name, date, progress, mood }) {
 		//two examples of conditional rendering below
 		//logical && and ternary
 		<div className="home">
-			<h2>Your workshops at a glance</h2>
+			<div className="main-list-title-container">
+				<h2 className="main-list-title">Your journey at a glance</h2>
+			</div>
 			{isLoading && <div>Loading...</div>}
 			{workshops && (
 				<WorkshopList
 					workshops={workshops}
-					title={"View All Workshops"}
+					title={"All Workshops"}
 					handleDelete={handleDelete}
 				/>
 			)}
