@@ -192,20 +192,24 @@
 
 .edit-btn,
 .dlt-btn {
-	padding: 3px 10px;
-	margin: 0px 2px ;
+	padding: 3px;
+	margin: 0px 3px ;
 	border: none;
 	border-radius: 5px;
 	background-color: #fb3630;
 	opacity: 0.8;
 	color: white;
 	cursor: pointer;
-	width: 100%;
+	width: 10%;
 	margin-top: 0px;
 	border: 1px solid rgba(0, 128, 0, 0.432);
 	font-size: 12px;
 }
 
+.edit-btn a:hover {
+	color: #fb6360;
+	opacity: 1;
+}
 /********************************************* workshop display tab*******************************************/
 
 .add-workshop {

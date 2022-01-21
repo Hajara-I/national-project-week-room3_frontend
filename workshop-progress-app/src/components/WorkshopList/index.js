@@ -36,13 +36,11 @@ const WorkshopList = ({ workshops, title }) => {
                 {workshop.mood}
               </p>
             </div>
-
+            <Link to={`/workshops/${workshop.id}`}>
               <div className="preview-btns-container">
-              <Link to={`/workshops/${workshop.id}`}>
                 <button className="edit-btn">Edit</button>
-                </Link>
               </div>
-
+            </Link>
           </div>
         );
       })}
