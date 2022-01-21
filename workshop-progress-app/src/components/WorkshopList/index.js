@@ -39,7 +39,6 @@ const WorkshopList = ({ workshops, title }) => {
             <Link to={`/workshops/${workshop.id}`}>
               <div className="preview-btns-container">
                 <button className="edit-btn">Edit</button>
-                <button className="dlt-btn">Delete</button>
               </div>
             </Link>
           </div>
