@@ -44,7 +44,7 @@ const WorkshopDetails = () => {
     const workshop = { name, date, progress, mood };
     setIsLoading(true);
 
-    fetch("https://workshop-tracker.herokuapp.com/workshops", {
+    fetch(`https://workshop-tracker.herokuapp.com/workshops/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(workshop),
@@ -84,6 +84,7 @@ const WorkshopDetails = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
+
             <div className="date">
               <input
                 className="date"
@@ -93,6 +94,7 @@ const WorkshopDetails = () => {
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>
+
             <div className="progress-label">
               <label>Progress </label>
 
@@ -147,8 +149,10 @@ const WorkshopDetails = () => {
               </select>
             </div>
             <div className="button-div">
-            <button className="submit-btn">SAVE CHANGES</button>
-            <button className="submit-btn" onClick={handleDelete}>DELETE</button>
+              <button className="submit-btn">SAVE CHANGES</button>
+              <button className="submit-btn" onClick={handleDelete}>
+                DELETE
+              </button>
             </div>
           </form>
         </div>
