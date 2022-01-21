@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500&family=Judson&family=Poppins:wght@600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -70,7 +72,7 @@
 	justify-content: center;
 }
 
-.input-form-container-inner .workshop-name,
+.input-form-container-inner, .workshop-name,
 .date,
 .progress-label,
 .mood-label {
@@ -105,7 +107,7 @@
 	letter-spacing: 1px;
 	cursor: pointer;
 	width: 50%;
-	margin-top: 20px;
+	margin: 20px 20px;
 	text-align: center;
 	
 }
@@ -116,7 +118,7 @@
 }
 
 .main-list-title {
-	font-family: "Archivo Black", sans-serif;
+	font-family: "Quicksand", sans-serif;
 	margin: 0 auto;
 	display: table;
 	font-size: 25px;
