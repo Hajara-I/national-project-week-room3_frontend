@@ -44,7 +44,7 @@ const WorkshopDetails = () => {
     const workshop = { name, date, progress, mood };
     setIsLoading(true);
 
-    fetch("https://workshop-tracker.herokuapp.com/workshops", {
+    fetch(`https://workshop-tracker.herokuapp.com/workshops/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(workshop),
@@ -70,11 +70,11 @@ const WorkshopDetails = () => {
 
   // rendering below
   return (
-    <div>
+    <div className="input-form-container-outer">
       {isLoading && <div>Loading...</div>}
       {workshop && (
-        <div>
-          <h2>Add a Workshop</h2>
+        <div className="input-form-container-inner">
+          <h2 className="input-form-header">Edit Workshop</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -84,7 +84,8 @@ const WorkshopDetails = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div>
+
+            <div className="date">
               <input
                 className="date"
                 type="date"
@@ -93,8 +94,9 @@ const WorkshopDetails = () => {
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>
-            <div>
-              <label>Select your progress </label>
+
+            <div className="progress-label">
+              <label>Progress </label>
 
               <select
                 className="progress"
@@ -109,10 +111,10 @@ const WorkshopDetails = () => {
               </select>
             </div>
 
-            <div>
-              <label>Select your mood </label>
+            <div className="mood-label">
+              <label>Mood </label>
               <select
-                className="mood-btns"
+                className="mood"
                 name="mood"
                 defaultValue={workshop.payload[0].mood}
                 onChange={(e) => setMood(e.target.value)}
@@ -146,8 +148,12 @@ const WorkshopDetails = () => {
                 </option>
               </select>
             </div>
-            <button className="submit-btn">SAVE CHANGES</button>
-            <button onClick={handleDelete}>DELETE</button>
+            <div className="button-div">
+              <button className="submit-btn">SAVE CHANGES</button>
+              <button className="submit-btn" onClick={handleDelete}>
+                DELETE
+              </button>
+            </div>
           </form>
         </div>
       )}
