@@ -8,6 +8,13 @@ const WorkshopList = ({ workshops, title }) => {
       </div>
       {workshops.payload.map((workshop) => {
         const date = new Date(workshop.date).toDateString();
+        if (workshop.mood === "poor") {
+          workshop.mood = "😩";
+        } else if (workshop.mood === "fair") {
+          workshop.mood = "😐";
+        } else if (workshop.mood === "good") {
+          workshop.mood = "😀";
+        }
         return (
           <div className="workshop-preview" key={workshop.id}>
             <div className="preview-top-container">
