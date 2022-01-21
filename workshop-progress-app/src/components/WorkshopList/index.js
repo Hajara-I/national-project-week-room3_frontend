@@ -15,8 +15,17 @@ const WorkshopList = ({ workshops, title }) => {
         } else if (workshop.mood === "good") {
           workshop.mood = "😀";
         }
+        let classNameToUse;
+        if (workshop.progress === 100) {
+          classNameToUse = "complete";
+          console.log(classNameToUse);
+        } else {
+          classNameToUse = "incomplete";
+          console.log(classNameToUse);
+        }
+
         return (
-          <div className="workshop-preview" key={workshop.id}>
+          <div className={`workshop-preview ${classNameToUse}`} key={workshop.id}>
             <div className="preview-top-container">
               <h3>{workshop.name}</h3>
               <p className="preview-progress">{workshop.progress}%</p>
@@ -24,7 +33,7 @@ const WorkshopList = ({ workshops, title }) => {
             <div className="preview-bottom-container">
               <p className="preview-date">{date}</p>
               <p className="preview-mood">
-                You rated your performance as {workshop.mood}
+                {workshop.mood}
               </p>
             </div>
             <Link to={`/workshops/${workshop.id}`}>
